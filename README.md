@@ -21,7 +21,7 @@ txgen -b ./backgrounds -f ./fonts -o ./chars-train -p "[0-9A-NP-Z#]" --number 50
 Similar to the above example, but with a different regex and no width specified (width is dynamicall calculated based on length of generated text).
 
 ```bash
-node ../bin/txgen.js -b ./backgrounds -f ./fonts -o ./serial-numbers -p "[A-NP-Z0-9#][A-NP-Z0-9\-]{2,10}[A-NP-Z0-9]?" --number 500 -h 64 -a 10 -d
+txgen -b ./backgrounds -f ./fonts -o ./serial-numbers -p "[A-NP-Z0-9#][A-NP-Z0-9\-]{2,10}[A-NP-Z0-9]?" --number 500 -h 64 -a 10 -d
 ```
 
 ## CLI Options
