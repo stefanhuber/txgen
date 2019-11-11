@@ -1,0 +1,31 @@
+{
+  "name": "txgen",
+  "version": "0.1.0",
+  "description": "generator for (engraved/carved/...) texts into background images as training data",
+  "main": "index.js",
+  "bin": {
+    "txgen": "./bin/txgen.js"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "node ./bin/txgen.js"
+  },
+  "author": "Stefan Huber <mail@stefanhuber.at> (https://stefanhuber.at)",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "canvas": "^2.6.0",
+    "commander": "^4.0.0",
+    "randexp": "^0.5.3"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
+  },
+  "homepage": "https://github.com/stefanhuber/txgen",
+  "bugs": {
+    "url": "https://github.com/stefanhuber/txgen/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stefanhuber/txgen.git"
+  }
+}
