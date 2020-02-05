@@ -49,11 +49,11 @@ function loadBackgrounds(path) {
 }
 
 function loadRandomFont(path) {
-    return readFilesFromDirectory(path, /\.ttf$/)
+    return readFilesFromDirectory(path, /\.otf|\.ttf$/)
         .then((files) => {            
             if (files.length > 0) {
                 const index = Math.round(Math.random() * (files.length - 1))
-                const match = /^(.*?)\.ttf$/.exec(files[index])
+                const match = /^(.*?)(\.otf|\.ttf)$/.exec(files[index])
                 registerFont(path + "/" + files[index], {family: match[1]})          
                 return match[1]   
             } else {

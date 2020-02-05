@@ -1,5 +1,6 @@
 const { createCanvas, loadImage } = require('canvas')
 const { calculateDrawingParamsByFontsize, calculateDrawingParamsBySize } = require('./calculations')
+const { drawRepeatableBackground } = require('./draw')
 
 function createEngravedText(options) {
     return new Promise((resolve, reject) => {        
@@ -11,10 +12,9 @@ function createEngravedText(options) {
 
                 const canvas = createCanvas(params.width, params.height)
                 const ctx = canvas.getContext('2d')
-                const backgroundX = Math.random() * (background.width - params.width)
-                const backgroundY = Math.random() * (background.height - params.height)
 
-                ctx.drawImage(background, backgroundX, backgroundY, params.width, params.height, 0, 0, params.width, params.height)
+                drawRepeatableBackground(ctx, background, params.width, params.height)
+
                 ctx.font = params.fontSize + 'px ' + options.font
                 
                 ctx.fillStyle = options.color
@@ -32,7 +32,8 @@ function createEngravedText(options) {
 
                 ctx.shadowColor = 'transparent';
                 ctx.globalCompositeOperation='destination-over';
-                ctx.drawImage(background, backgroundX, backgroundY, params.width, params.height, 0, 0, params.width, params.height)
+
+                drawRepeatableBackground(ctx, background, params.width, params.height)
 
                 resolve(canvas)
             } catch(e) {

@@ -8,11 +8,11 @@ test('calculate text position', () => {
 })
 
 test('calculate text width', () => {
-    expect(calculations.calculateTextSize('Agqi', '100px Arial').height).toBeLessThanOrEqual(100)
+    expect(calculations.calculateTextSize('Agqi97984646864', '100px Arial').height).toBeLessThanOrEqual(100)
 })
 
 test('calculate max font size', () => {
-    expect(calculations.calculateMaxFontSize("AQq", 32, 32, 'Arial')).toBeLessThanOrEqual(40)
+    expect(calculations.calculateMaxFontSize("AB", 32, 32, 'Arial')).toBeLessThanOrEqual(40)
     expect(calculations.calculateMaxFontSize("AQq", -50, 32, 'Arial')).toBeLessThanOrEqual(40)
 })
 

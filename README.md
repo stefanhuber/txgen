@@ -10,7 +10,7 @@ npm i txgen (-g for global install)
 
 ## CLI example 1
 
-500 character images based on regex pattern `[0-9A-NP-Z#]` with size `64x64` pixels and a padding of `4` pixels. Backgrounds come from directory `./backgrouns`, fonts come from directory `./fonts`. The output should be placed in directory `./chars-train` and with the `-d` option files are placed in a directory with the name of the character and incremental file name (e.g., A/1.jpg, A/2.jpg, ...).
+500 character images based on regex pattern `[0-9A-NP-Z#]` with size `64x64` pixels and a padding of `4` pixels. Backgrounds come from directory `./backgrounds`, fonts come from directory `./fonts`. The output should be placed in directory `./chars-train` and with the `-d` option files are placed in a directory with the name of the character and incremental file name (e.g., A/1.jpg, A/2.jpg, ...).
 
 ```bash
 txgen -b ./backgrounds -f ./fonts -o ./chars-train -p "[0-9A-NP-Z#]" --number 500 -w 64 -h 64 -a 4 -d
@@ -18,7 +18,7 @@ txgen -b ./backgrounds -f ./fonts -o ./chars-train -p "[0-9A-NP-Z#]" --number 50
 
 ## CLI example 2
 
-Similar to the above example, but with a different regex and no width specified (width is dynamicall calculated based on length of generated text).
+Similar to the above example, but with a different regex and no specified width (width is dynamically calculated based on length of generated text). The files are placed inside the output folder `./serial-numbers`.
 
 ```bash
 txgen -b ./backgrounds -f ./fonts -o ./serial-numbers -p "[A-NP-Z0-9#][A-NP-Z0-9\-]{2,10}[A-NP-Z0-9]?" --number 500 -h 64 -a 10 -d

@@ -79,7 +79,11 @@ function calculateMaxFontSize(text, width, height, font, fontSize) {
     } else if ((textSize.width < width && textSize.height < height) || (width <= 0 && textSize.height < height)) {
         return calculateMaxFontSize(text, width, height, font, fontSize+1)
     } else if (textSize.width > width || textSize.height > height) {
-        return calculateMaxFontSize(text, width, height, font, fontSize-1)
+        if (fontSize <= 1) {
+            return 1
+        } else {
+            return calculateMaxFontSize(text, width, height, font, fontSize-1)
+        }           
     }
 }
 
